@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
 import CartButton from "../CartButton";
 
-const AppHeader: FC = () => {
+const AppHeader: FC<{ openCart: () => void }> = ({ openCart }) => {
   return (
     <Box display="flex">
       <AppBar component="nav" color="primary">
@@ -33,7 +33,7 @@ const AppHeader: FC = () => {
             Mealz
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" }, width: "10%" }}>
-            <CartButton />
+            <CartButton onClick={openCart} />
           </Box>
         </Toolbar>
       </AppBar>

@@ -7,7 +7,8 @@ const Meal: FC<Meal> = ({ id, name, description, price }) => {
   const [amount, setAmount] = useState(0);
 
   const handleAddMeal = () => setAmount((prev) => amount + 1);
-  const handleRemoveMeal = () => setAmount((prev) => amount - 1);
+  const handleRemoveMeal = () =>
+    setAmount((prev) => (prev === 0 ? 0 : amount - 1));
   return (
     <MealWrapper>
       <Box

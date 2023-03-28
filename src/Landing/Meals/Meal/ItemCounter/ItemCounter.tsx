@@ -8,20 +8,14 @@ type Props = {
   onRemoveItem: () => void;
   onAddItem: () => void;
 };
-const ItemCounter: FC<Props> = ({
-  count,
-  onRemoveItem,
-  onAddItem,
-}) => {
+const ItemCounter: FC<Props> = ({ count, onRemoveItem, onAddItem }) => {
   return (
     <Box display="flex" sx={{ alignItems: "center" }}>
-      <Button onClick={onRemoveItem}>
+      <Button onClick={onRemoveItem} disabled={count <= 0}>
         <RemoveCircleOutlineIcon />
       </Button>
-      <Typography
-        variant="h4"
-        sx={{ marginTop: "0.25rem", fontWeight: "bold", fontSize: "1.25rem" }}
-      >
+
+      <Typography variant="h4" sx={{ fontWeight: "bold", fontSize: "1.25rem" }}>
         {count}
       </Typography>
       <Button onClick={onAddItem}>
