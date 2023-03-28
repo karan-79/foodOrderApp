@@ -1,10 +1,46 @@
 import { useState } from "react";
-import { Alert } from "@mui/material";
+import { Alert, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import Landing from "../Landing";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+const { palette } = createTheme();
+const theme = createTheme({
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        colorPrimary: {
+          backgroundColor: "#212D40",
+        },
+      },
+    },
+    // MuiIcon:{
+    //   styleOverrides:{
+    //     colorPrimary:{
+    //       backgroundColor
+    //     }
+    //   }
+    // }
+  },
+  palette: {
+    secondary: {
+      main: "#D66853",
+    },
+    background: {
+      default: "#11151C",
+    },
+    primary: {
+      main: "#7D4E57",
+    },
+  },
+});
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <Alert severity="success"> hey there!</Alert>;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Landing />
+    </ThemeProvider>
+  );
 }
 
 export default App;
