@@ -27,11 +27,13 @@ export default function Modal({ open, toClose, children }: Props) {
       TransitionComponent={Transition}
       keepMounted
       onClose={toClose}
-      aria-describedby="alert-dialog-slide-description"
+      aria-describedby="dialog-slide-description"
+      maxWidth="md"
+      fullWidth
     >
       <DialogTitle>{"Your items in cart"}</DialogTitle>
       <DialogContent>
-        <DialogContentText id="alert-dialog-slide-description">
+        <DialogContentText id="dialog-slide-description">
           {children}
         </DialogContentText>
       </DialogContent>

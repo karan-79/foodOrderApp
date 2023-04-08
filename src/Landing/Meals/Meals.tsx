@@ -6,7 +6,6 @@ import { FC } from "react";
 import MealItem from "./Meal";
 
 const Meals: FC = () => {
-  const handleAddMeal = () => {};
   return (
     <Box display="flex" flexDirection="column">
       <MealsSummary />

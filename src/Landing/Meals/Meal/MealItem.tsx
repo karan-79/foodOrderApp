@@ -21,6 +21,7 @@ const MealItem: FC<Meal> = ({ id, name, description, price }) => {
       price: price,
       numberOfItems: amount,
     });
+    setAmount(0);
   };
   return (
     <MealWrapper>
