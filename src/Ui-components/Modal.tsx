@@ -29,7 +29,7 @@ export default function Modal({ open, toClose, children }: Props) {
       onClose={toClose}
       aria-describedby="alert-dialog-slide-description"
     >
-      <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+      <DialogTitle>{"Your items in cart"}</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-slide-description">
           {children}

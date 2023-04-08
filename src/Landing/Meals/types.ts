@@ -4,3 +4,5 @@ export type Meal = {
   description: string;
   price: number;
 };
+
+export type MealItemType = Meal & { numberOfItems: number };

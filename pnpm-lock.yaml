@@ -5,14 +5,17 @@ specifiers:
   '@emotion/styled': ^11.10.6
   '@mui/icons-material': ^5.11.11
   '@mui/material': ^5.11.14
+  '@types/lodash': ^4.14.192
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@types/styled-components': ^5.1.26
   '@vitejs/plugin-react-swc': ^3.0.0
+  lodash: ^4.17.21
   react: ^18.2.0
   react-dom: ^18.2.0
   react-is: ^18.2.0
   styled-components: ^5.3.6
+  ts-pattern: ^4.2.2
   typescript: ^4.9.3
   vite: ^4.2.0
 
@@ -21,12 +24,15 @@ dependencies:
   '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
   '@mui/icons-material': 5.11.11_apxknyxvl46cjjhrrp53pe5pxy
   '@mui/material': 5.11.14_xqeqsl5kvjjtyxwyi3jhw3yuli
+  lodash: 4.17.21
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-is: 18.2.0
   styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+  ts-pattern: 4.2.2
 
 devDependencies:
+  '@types/lodash': 4.14.192
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@types/styled-components': 5.1.26
@@ -809,6 +815,10 @@ packages:
       hoist-non-react-statics: 3.3.2
     dev: true
 
+  /@types/lodash/4.14.192:
+    resolution: {integrity: sha512-km+Vyn3BYm5ytMO13k9KTp27O75rbQ0NFw+U//g+PX7VZyjCioXaRFisqSIJRECljcTv73G3i6BpglNGHgUQ5A==}
+    dev: true
+
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: false
@@ -1301,6 +1311,10 @@ packages:
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
+    dev: false
+
+  /ts-pattern/4.2.2:
+    resolution: {integrity: sha512-qzJMo2pbkUJWusRH5o8xR+xogn6RmvViyUgwBFTtRENLse470clCGjHDf6haWGZ1AOmk8XkEohUoBW8Uut6Scg==}
     dev: false
 
   /typescript/4.9.5:
