@@ -15,7 +15,7 @@ const MealItem: FC<Meal> = ({ id, name, description, price }) => {
   const { addItem } = useContext(CartContext);
   const handleAddMealItem = () => {
     addItem({
-      id: id,
+      id: "cart-" + id,
       description: description,
       name: name,
       price: price,
