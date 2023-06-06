@@ -2,15 +2,19 @@ import { FC, useContext } from "react";
 import ShoppingCart from "@mui/icons-material/ShoppingCart";
 import { Box, Chip, IconButton, Typography } from "@mui/material";
 import { CartContext } from "../../Providers/CartProvider";
-import { Meal } from "../../Meals/types";
+import { Meal, MealItemType } from "../../Meals/types";
+import { mealStoreState } from "../../../App/store/foodStore";
+import { useSelector } from "react-redux";
 type Props = {
   onClick: () => void;
 };
 const CartButton: FC<Props> = ({ onClick }) => {
-  const { items } = useContext(CartContext);
-  const totalItems = items.reduce((set, curr) => {
-    return set.includes(curr) ? set : [...set, curr];
-  }, [] as Meal[]).length;
+  const items: MealItemType[] = useSelector(
+    (state: any) => state.ordered.meals
+  );
+  const totalItems = items.reduce((acc, curr) => {
+    return acc.includes(curr) ? acc : [...acc, curr];
+  }, [] as MealItemType[]).length;
   return (
     <Chip
       sx={{ paddingInline: "20px" }}

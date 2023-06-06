@@ -12,7 +12,7 @@ import CartProvider from "./Providers/CartProvider";
 const Landing: FC = () => {
   const [showCart, setShowCart] = useState(false);
   return (
-    <CartProvider>
+    <>
       {showCart && (
         <Cart isOpen={showCart} handleClose={() => setShowCart(false)} />
       )}
@@ -34,7 +34,7 @@ const Landing: FC = () => {
         </Box>
         <Meals />
       </Box>
-    </CartProvider>
+    </>
   );
 };
 

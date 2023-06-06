@@ -4,23 +4,27 @@ import { Box, Button, Typography } from "@mui/material";
 import { MealWrapper } from "./styled";
 import ItemCounter from "./ItemCounter";
 import { CartContext } from "../../Providers/CartProvider";
+import { foodActions } from "../../../App/store/foodStore";
 import MealPresenter from "./MealPresenter";
+import { useDispatch } from "react-redux";
 
 const MealItem: FC<Meal> = ({ id, name, description, price }) => {
   const [amount, setAmount] = useState(0);
+  const dispatch = useDispatch();
   const handleAddMeal = () => setAmount((prev) => prev + 1);
   const handleRemoveMeal = () => {
     setAmount((prev) => (prev === 0 ? prev : prev - 1));
   };
-  const { addItem } = useContext(CartContext);
   const handleAddMealItem = () => {
-    addItem({
-      id: "cart-" + id,
-      description: description,
-      name: name,
-      price: price,
-      numberOfItems: amount,
-    });
+    dispatch(
+      foodActions.addMeal({
+        id: id,
+        description: description,
+        name: name,
+        price: price,
+        numberOfItems: amount,
+      })
+    );
     setAmount(0);
   };
   return (

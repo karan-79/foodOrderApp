@@ -3,6 +3,8 @@ import { Alert, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Landing from "../Landing";
 import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Provider } from "react-redux";
+import store from "./store/foodStore";
 const { palette } = createTheme();
 const theme = createTheme({
   components: {
@@ -38,7 +40,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Landing />
+      <Provider store={store}>
+        <Landing />
+      </Provider>
     </ThemeProvider>
   );
 }
