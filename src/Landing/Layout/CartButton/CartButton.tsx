@@ -3,7 +3,6 @@ import ShoppingCart from "@mui/icons-material/ShoppingCart";
 import { Box, Chip, IconButton, Typography } from "@mui/material";
 import { CartContext } from "../../Providers/CartProvider";
 import { Meal, MealItemType } from "../../Meals/types";
-import { mealStoreState } from "../../../App/store/foodStore";
 import { useSelector } from "react-redux";
 type Props = {
   onClick: () => void;

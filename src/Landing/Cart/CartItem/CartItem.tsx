@@ -5,7 +5,7 @@ import { MealWrapper } from "../../Meals/Meal/styled";
 import { MealItemType } from "../../Meals/types";
 import { CartContext } from "../../Providers/CartProvider";
 import { useDispatch } from "react-redux";
-import { foodActions } from "../../../App/store/foodStore";
+import { foodActions } from "../../Cart/cartSlice";
 import { IconButton } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 const CartItem: FC<MealItemType> = ({

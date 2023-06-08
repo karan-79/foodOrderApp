@@ -4,7 +4,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { MealWrapper } from "./styled";
 import ItemCounter from "./ItemCounter";
 import { CartContext } from "../../Providers/CartProvider";
-import { foodActions } from "../../../App/store/foodStore";
+import { foodActions } from "../../Cart/cartSlice";
 import MealPresenter from "./MealPresenter";
 import { useDispatch } from "react-redux";
 

@@ -6,6 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Provider } from "react-redux";
 import store from "./store/foodStore";
 const { palette } = createTheme();
+import "./config/axiosInterceptors";
 const theme = createTheme({
   components: {
     MuiAppBar: {

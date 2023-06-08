@@ -14,7 +14,6 @@ const Cart: FC<Props> = ({ isOpen, handleClose }) => {
   const items: MealItemType[] = useSelector(
     (state: any) => state.ordered.meals
   );
-  console.log("cart items", items);
   return (
     <Modal open={isOpen} toClose={handleClose}>
       {items.map(({ name, price, numberOfItems, description, id }, index) => {
