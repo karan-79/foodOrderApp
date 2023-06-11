@@ -7,30 +7,22 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import React, { FC, PropsWithChildren } from "react";
+import TransitionDialog from "./TransitionDialog";
 
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement<any, any>;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="down" ref={ref} {...props} />;
-});
+//Todo this is supposed to be a generic dialog
 type Props = {
   open: boolean;
   toClose: () => void;
+  onOrder: () => void;
 } & PropsWithChildren;
-export default function Modal({ open, toClose, children }: Props) {
+export default function CartDialog({
+  open,
+  toClose,
+  children,
+  onOrder,
+}: Props) {
   return (
-    <Dialog
-      open={open}
-      TransitionComponent={Transition}
-      keepMounted
-      onClose={toClose}
-      aria-describedby="dialog-slide-description"
-      maxWidth="md"
-      fullWidth
-    >
+    <TransitionDialog open={open} onClose={toClose}>
       <DialogTitle>{"Your items in cart"}</DialogTitle>
       <DialogContent>
         <DialogContentText id="dialog-slide-description">
@@ -38,9 +30,9 @@ export default function Modal({ open, toClose, children }: Props) {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button>Order</Button>
+        <Button onClick={onOrder}>Order</Button>
         <Button onClick={toClose}>Close</Button>
       </DialogActions>
-    </Dialog>
+    </TransitionDialog>
   );
 }

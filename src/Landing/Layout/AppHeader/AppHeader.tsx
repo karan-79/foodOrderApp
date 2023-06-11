@@ -1,18 +1,26 @@
 import {
   AppBar,
+  Avatar,
   Box,
   Button,
   CssBaseline,
   IconButton,
+  Menu,
   Toolbar,
+  Tooltip,
   Typography,
   colors,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FC } from "react";
 import CartButton from "../CartButton";
-
-const AppHeader: FC<{ openCart: () => void }> = ({ openCart }) => {
+import { useSelector } from "react-redux";
+import UserMenu from "./UserMenu/UserMenu";
+type Props = {
+  openCart: () => void;
+  openOrders: (id: string) => void;
+};
+const AppHeader: FC<Props> = ({ openCart, openOrders }) => {
   return (
     <Box display="flex">
       <AppBar component="nav" color="primary">
@@ -35,6 +43,7 @@ const AppHeader: FC<{ openCart: () => void }> = ({ openCart }) => {
           <Box sx={{ display: { xs: "none", sm: "block" }, width: "10%" }}>
             <CartButton onClick={openCart} />
           </Box>
+          <UserMenu openOrders={openOrders} />
         </Toolbar>
       </AppBar>
     </Box>
