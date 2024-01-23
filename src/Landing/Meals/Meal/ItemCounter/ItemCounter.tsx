@@ -21,14 +21,14 @@ const ItemCounter: FC<Props> = ({
         <RemoveCircleOutlineIcon />
       </Button>
 
-      {showCount && (
+      {showCount ? (
         <Typography
           variant="h4"
           sx={{ fontWeight: "bold", fontSize: "1.25rem" }}
         >
           {count}
         </Typography>
-      )}
+      ) : null}
       <Button onClick={onAddItem}>
         <ControlPointIcon />
       </Button>
