@@ -23,6 +23,8 @@ jobs:
           run: npm i -g pnpm
           
         - name: Build
-          run: pnpm build
+          run: |
+            pnpm install
+            pnpm build
     
 
