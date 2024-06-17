@@ -1,1 +1,27 @@
 
+name: foodOrderApp
+
+on:
+  push:
+    - main
+
+jobs:
+  setup-node:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Install Node
+          run: |
+            sudo apt update \
+              sudo apt install nodejs
+
+        - name: Install pnpm
+          run: npm i -g pnpm
+          
+        - name: Build
+          run: pnpm build
+    
+
