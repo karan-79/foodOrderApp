@@ -3,7 +3,8 @@ name: foodOrderApp
 
 on:
   push:
-    - main
+    branches:
+      - main
 
 jobs:
   setup-node:
